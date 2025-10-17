@@ -87,24 +87,16 @@ $endif$
 %--------------------------------
 \begin{document}
 \small
-\textsc{\textbf{$author$}}
-$for(from)$
-\textbullet{} \textsc{$from$}
-$endfor$
 
 \vspace{1em}
 
-\normalsize \sffamily
 $for(to)$
 $to$\\
 $endfor$
 
 \vspace{3em}
 
-\rmfamily
-\begin{flushright}
-  $city$, $if(customdate)$\DTMusedate{customdate}$else$\today$endif$
-\end{flushright}
+$city$, $if(customdate)$\DTMusedate{customdate}$else$\today$endif$
 
 \vspace{1em}
 
@@ -116,15 +108,11 @@ $endif$
 
 $body$
 
-\begin{FlushRight}
-  \IfFileExists{signature.pdf}
-  {
-    \includegraphics[height=5.5\baselineskip]{signature.pdf} \par
-  }
-  {
-    \vspace{5.5\baselineskip}
-  }
-  $author$
-\end{FlushRight}
+\vspace{1em}
+
+\textsc{\textbf{$author$}}\\
+$for(from)$
+$from$\\
+$endfor$
 
 \end{document}
